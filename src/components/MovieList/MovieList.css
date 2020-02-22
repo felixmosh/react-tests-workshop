@@ -1,0 +1,92 @@
+.movieList {
+  display: block;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.movieList input {
+  height: 2rem;
+  font-size: 1.2rem;
+  padding: 0 10px;
+  border-radius: 4px;
+  border:1px solid rgba(135, 106, 34, .5);
+  width: 50%;
+  margin-bottom: 1rem;
+  font-family: inherit;
+}
+
+.movieList ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0 10px;
+  background-color: rgba(135, 106, 34, 0.1);
+  border-radius: 0.5rem;
+}
+
+.movieList ul > li {
+  padding: 20px 10px;
+  max-width: 200px;
+  min-width: 150px;
+  flex: 1 1 20%;
+}
+
+.movieList figure {
+  margin: 0;
+  height: 100%;
+  position: relative;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.movieList figure:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 250ms ease-in-out;
+}
+
+.movieList figure:hover:after {
+  opacity: 1;
+}
+
+.movieList figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.movieList figcaption {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 10px 5px;
+  z-index: 2;
+}
+
+.movieRating {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 0 0 0 4px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  font-weight: bold;
+  padding: 5px 10px;
+  z-index: 2;
+}
+
+.comment {
+  margin-top: 2rem;
+  opacity: .5;
+}
