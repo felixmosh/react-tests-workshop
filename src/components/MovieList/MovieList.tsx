@@ -17,7 +17,7 @@ export const MovieList = ({ list }: { list: IMovie[] }) => {
 
       {filteredList.length > 0 ? <ul>
         {filteredList.map(movie => (
-          <li key={movie.id}>
+          <li key={movie.id} data-testid="movie-card">
             <Link to={`/movie/${movie.id}`}>
               <figure>
                 <img src={`https://image.tmdb.org/t/p/w200/${movie.posterPath}`} />
@@ -27,7 +27,7 @@ export const MovieList = ({ list }: { list: IMovie[] }) => {
             </Link>
           </li>
         ))}
-      </ul> : <div className={s.comment}>No results...</div>}
+      </ul> : <div className={s.comment} data-testid="empty-message">No results...</div>}
     </div>
   );
 };
