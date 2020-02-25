@@ -22,7 +22,7 @@ export const MovieDetails = () => {
           <figure className={s.moviePoster}>
             <img src={`https://image.tmdb.org/t/p/w200${movie.posterPath}`} />
             <figcaption>
-              <h2>
+              <h2 data-testid="movie-title">
                 {movie.title} <span>{movie.year}</span>
               </h2>
             </figcaption>
