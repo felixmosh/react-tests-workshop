@@ -4,27 +4,26 @@ import { MemoryRouter } from 'react-router-dom';
 import { IMovie } from '../../src/api';
 import { MovieList } from '../../src/components/MovieList/MovieList';
 import { aMovieList } from '../builders/movie.builder';
+import { MovieListDriver } from '../drivers/MovieList.driver';
 
 describe('<MovieList />', () => {
+  let driver: MovieListDriver;
+  beforeEach(() => {
+    driver = new MovieListDriver();
+  });
+
   it('should render movie list', () => {
     const movieList: IMovie[] = aMovieList(1);
-    const { getAllByTestId } = render(
-      <MemoryRouter>
-        <MovieList list={movieList} />
-      </MemoryRouter>
-    );
+    driver.given.movieList(movieList).when.render();
 
-    expect(getAllByTestId('movie-card')).toHaveLength(movieList.length);
+    expect(driver.get.movieCards()).toHaveLength(movieList.length);
   });
 
   it('should render empty message', () => {
-    const { getByTestId } = render(
-      <MemoryRouter>
-        <MovieList list={[]} />
-      </MemoryRouter>
-    );
+    driver = new MovieListDriver();
+    driver.given.movieList([]).when.render();
 
-    expect(getByTestId('empty-message').textContent).toBe('No results...');
+    expect(driver.get.emptyMessage()).toBe('No results...');
   });
 
   describe('filter by title', () => {
@@ -33,28 +32,21 @@ describe('<MovieList />', () => {
 
     beforeEach(() => {
       movieList = aMovieList();
-      screen = render(
-        <MemoryRouter>
-          <MovieList list={movieList} />
-        </MemoryRouter>
-      );
+      driver.given.movieList(movieList).when.render();
     });
 
     it('should allow filter movies by title', () => {
-      fireEvent.change(screen.getByTestId('filter-input'), {
-        target: { value: movieList[1].title },
-      });
+      driver.when.filterBy(movieList[1].title);
+      const cards = driver.get.movieCards();
 
-      expect(screen.getAllByTestId('movie-card')).toHaveLength(1);
-      expect(screen.getByTestId('movie-title').textContent).toBe(movieList[1].title);
+      expect(cards).toHaveLength(1);
+      expect(cards[0].get.title()).toBe(movieList[1].title);
     });
 
     it('should show no results on non exists query', () => {
-      fireEvent.change(screen.getByTestId('filter-input'), {
-        target: { value: 'none-exists-title' },
-      });
+      driver.when.filterBy('none-exists-title');
 
-      expect(screen.getByTestId('empty-message')).toBeTruthy();
+      expect(driver.get.emptyMessage()).toBeTruthy();
     });
   });
 });
