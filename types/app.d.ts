@@ -1,17 +1,3 @@
-declare module '*.css' {
-  interface IClassNames {
-    [className: string]: string;
-  }
-
-  const classNames: IClassNames;
-  export = classNames;
-}
-
-declare module '*.svg' {
-  const filePath: string;
-  export = filePath;
-}
-
 export interface IMovieDbResponse {
   page: number;
   total_results: number;

@@ -41,7 +41,9 @@ export const MovieDetails = () => {
               <span>Language</span>
             </li>
           </ul>
-          <p className={s.description}>{movie.overview}</p>
+          <p className={s.description} data-testid="movie-description">
+            {movie.overview}
+          </p>
         </div>
       </div>
     </section>
