@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import { IMovie } from '../../src/api';
@@ -8,31 +8,32 @@ import { aMovieList } from '../builders/movie.builder';
 describe('<MovieList />', () => {
   it('should render movie list', () => {
     const movieList: IMovie[] = aMovieList(1);
-    render(
+    const { getAllByTestId } = render(
       <MemoryRouter>
         <MovieList list={movieList} />
       </MemoryRouter>
     );
 
-    expect(screen.getAllByTestId('movie-card')).toHaveLength(movieList.length);
+    expect(getAllByTestId('movie-card')).toHaveLength(movieList.length);
   });
 
   it('should render empty message', () => {
-    render(
+    const { getByTestId } = render(
       <MemoryRouter>
         <MovieList list={[]} />
       </MemoryRouter>
     );
 
-    expect(screen.getByTestId('empty-message').textContent).toBe('No results...');
+    expect(getByTestId('empty-message').textContent).toBe('No results...');
   });
 
   describe('filter by title', () => {
     let movieList: IMovie[];
+    let screen: any;
 
     beforeEach(() => {
       movieList = aMovieList();
-      render(
+      screen = render(
         <MemoryRouter>
           <MovieList list={movieList} />
         </MemoryRouter>
