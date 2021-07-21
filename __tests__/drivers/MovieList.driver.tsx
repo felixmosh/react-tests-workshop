@@ -7,20 +7,18 @@ import { MovieCardDriver } from './MovieCard.driver';
 
 export class MovieListDriver {
   private movieList: IMovie[];
-  private component: RenderResult;
-
   public given = {
     movieList: (list: IMovie[]) => {
       this.movieList = list;
       return this;
     },
   };
-
+  private component: RenderResult;
   public get = {
     movieCards: () => {
       return this.component
         .getAllByTestId('movie-card')
-        .map(element => new MovieCardDriver(element));
+        .map((element) => new MovieCardDriver(element));
     },
     emptyMessage: () => {
       return this.component.getByTestId('empty-message').textContent;

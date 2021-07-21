@@ -1,8 +1,5 @@
-import { fireEvent, render } from '@testing-library/react';
 import React from 'react';
-import { MemoryRouter } from 'react-router-dom';
 import { IMovie } from '../../src/api';
-import { MovieList } from '../../src/components/MovieList/MovieList';
 import { aMovieList } from '../builders/movie.builder';
 import { MovieListDriver } from '../drivers/MovieList.driver';
 

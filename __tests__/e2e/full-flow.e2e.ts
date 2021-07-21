@@ -6,14 +6,14 @@ describe('full browser flow', () => {
   it('should show movie list', async () => {
     await expect(page.title()).resolves.toMatch('MoviesAPP');
     const input = await page.$('[data-testid="filter-input"]');
-    await input.type('joker');
+    await input.type('cruella');
     const jokerCard = await page.$('[data-testid="movie-card"] a');
 
     await jokerCard.click();
     const text = (await page.$('[data-testid="movie-description"]')).evaluate(
-      elm => elm.textContent
+      (elm) => elm.textContent
     );
 
-    await expect(text).resolves.toContain('During the 1980s');
+    await expect(text).resolves.toContain('In 1970s London amidst');
   });
 });

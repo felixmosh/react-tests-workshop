@@ -2,6 +2,7 @@
   display: block;
   max-width: 80%;
   margin: 0 auto;
+  padding-bottom: 2rem;
 }
 
 .movieList input {
@@ -9,7 +10,7 @@
   font-size: 1.2rem;
   padding: 0 10px;
   border-radius: 4px;
-  border:1px solid rgba(135, 106, 34, .5);
+  border: 1px solid rgba(135, 106, 34, 0.5);
   width: 50%;
   margin-bottom: 1rem;
   font-family: inherit;
@@ -17,20 +18,13 @@
 
 .movieList ul {
   list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-gap: 1rem;
+  padding: 1rem;
   margin: 0;
-  padding: 0 10px;
   background-color: rgba(135, 106, 34, 0.1);
   border-radius: 0.5rem;
-}
-
-.movieList ul > li {
-  padding: 20px 10px;
-  max-width: 200px;
-  min-width: 150px;
-  flex: 1 1 20%;
 }
 
 .movieList figure {
@@ -88,5 +82,5 @@
 
 .comment {
   margin-top: 2rem;
-  opacity: .5;
+  opacity: 0.5;
 }
