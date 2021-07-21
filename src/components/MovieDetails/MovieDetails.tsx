@@ -22,7 +22,7 @@ export const MovieDetails = () => {
           <figure className={s.moviePoster}>
             <img src={`https://image.tmdb.org/t/p/w200${movie.posterPath}`} />
             <figcaption>
-              <h2>
+              <h2 data-testid="movie-title">
                 {movie.title} <span>{movie.year}</span>
               </h2>
             </figcaption>
@@ -41,7 +41,9 @@ export const MovieDetails = () => {
               <span>Language</span>
             </li>
           </ul>
-          <p className={s.description}>{movie.overview}</p>
+          <p className={s.description} data-testid="movie-description">
+            {movie.overview}
+          </p>
         </div>
       </div>
     </section>

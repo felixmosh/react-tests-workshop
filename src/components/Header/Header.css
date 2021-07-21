@@ -1,52 +1,52 @@
 .header {
-  color: #e4202c;
-  font-size: 2rem;
-  position: relative;
-  z-index: 1;
-  padding: 20px 0;
-  flex-basis: 120px;
-  flex-shrink: 0;
+    color: #e4202c;
+    font-size: 2rem;
+    position: relative;
+    z-index: 1;
+    padding: 20px 0;
+    flex-basis: 120px;
+    flex-shrink: 0;
 }
 
 .header.isMinimized {
-  margin-bottom: -200px;
-  background: linear-gradient(
-    to top,
-    hsla(0, 0%, 0%, 0) 0%,
-    hsla(0, 0%, 0%, 0.01) 8.1%,
-    hsla(0, 0%, 0%, 0.037) 15.5%,
-    hsla(0, 0%, 0%, 0.08) 22.5%,
-    hsla(0, 0%, 0%, 0.135) 29%,
-    hsla(0, 0%, 0%, 0.2) 35.3%,
-    hsla(0, 0%, 0%, 0.271) 41.2%,
-    hsla(0, 0%, 0%, 0.347) 47.1%,
-    hsla(0, 0%, 0%, 0.423) 52.9%,
-    hsla(0, 0%, 0%, 0.499) 58.8%,
-    hsla(0, 0%, 0%, 0.57) 64.7%,
-    hsla(0, 0%, 0%, 0.635) 71%,
-    hsla(0, 0%, 0%, 0.69) 77.5%,
-    hsla(0, 0%, 0%, 0.733) 84.5%,
-    hsla(0, 0%, 0%, 0.76) 91.9%,
-    hsla(0, 0%, 0%, 0.77) 100%
-  );
+    margin-bottom: -200px;
+    background: linear-gradient(
+            to top,
+            hsla(0, 0%, 0%, 0) 0%,
+            hsla(0, 0%, 0%, 0.01) 8.1%,
+            hsla(0, 0%, 0%, 0.037) 15.5%,
+            hsla(0, 0%, 0%, 0.08) 22.5%,
+            hsla(0, 0%, 0%, 0.135) 29%,
+            hsla(0, 0%, 0%, 0.2) 35.3%,
+            hsla(0, 0%, 0%, 0.271) 41.2%,
+            hsla(0, 0%, 0%, 0.347) 47.1%,
+            hsla(0, 0%, 0%, 0.423) 52.9%,
+            hsla(0, 0%, 0%, 0.499) 58.8%,
+            hsla(0, 0%, 0%, 0.57) 64.7%,
+            hsla(0, 0%, 0%, 0.635) 71%,
+            hsla(0, 0%, 0%, 0.69) 77.5%,
+            hsla(0, 0%, 0%, 0.733) 84.5%,
+            hsla(0, 0%, 0%, 0.76) 91.9%,
+            hsla(0, 0%, 0%, 0.77) 100%
+    );
 }
 
 .header.isMinimized h1 {
-  transform: scale(.5) translate(10%, 10%);
-  text-shadow: 2px 2px 1px #F1FAEE;
+    transform: scale(0.5) translate(10%, 10%);
+    text-shadow: 2px 2px 1px #f1faee;
 }
 
 .header h1 {
-  margin: 0;
-  will-change: transform;
-  transform-origin: left top;
-  transform: translateX(10%);
-  transition: transform 250ms ease-in-out;
-  white-space: nowrap;
-  display: inline-block;
+    margin: 0;
+    will-change: transform;
+    transform-origin: left top;
+    transform: translateX(10%);
+    transition: transform 250ms ease-in-out;
+    white-space: nowrap;
+    display: inline-block;
 }
 
 .header img {
-  width: 2em;
-  height: 2em;
+    width: 2em;
+    height: 2em;
 }

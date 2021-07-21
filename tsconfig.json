@@ -4,8 +4,12 @@
     "noImplicitAny": true,
     "esModuleInterop": true,
     "module": "ESNext",
+    "moduleResolution": "node",
     "target": "es5",
     "jsx": "react"
   },
-  "include": ["./src/**/*", "types/*.d.ts"]
+  "include": [
+    "./src/**/*",
+    "types/*.d.ts"
+  ]
 }
