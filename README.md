@@ -1,17 +1,15 @@
-# Rreact Typescript Boilerplate
-
-A very simple minimal boilerplate for React with TypeScript.
+# React tests workshop
 
 1. Get the sourcecode:
 
     ```
-    $ git clone https://github.com/dashtinejad/react-typescript-boilerplate.git
+    $ git clone https://github.com/felixmosh/react-tests-workshop.git
     ```
 
 2. Switch to its directory:
 
     ```
-    $ cd react-typescript-boilerplate
+    $ cd react-tests-workshop
     ```
 
 3. Run `npm install` command, it will install dependencies:
@@ -35,5 +33,5 @@ A very simple minimal boilerplate for React with TypeScript.
 6. Now you can browse your site through this address:
 
     ```
-    http://localhost:8080/
+    http://localhost:3000/
     ```

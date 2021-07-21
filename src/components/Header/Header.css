@@ -32,8 +32,8 @@
 }
 
 .header.isMinimized h1 {
-  transform: scale(.5) translate(10%, 10%);
-  text-shadow: 2px 2px 1px #F1FAEE;
+  transform: scale(0.5) translate(10%, 10%);
+  text-shadow: 2px 2px 1px #f1faee;
 }
 
 .header h1 {
