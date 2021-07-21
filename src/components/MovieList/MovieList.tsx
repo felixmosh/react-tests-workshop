@@ -8,7 +8,7 @@ export const MovieList = ({ list }: { list: IMovie[] }) => {
   const handleInputChange = ({ target: { value } }: any) => setQueryFilter(value);
 
   const filteredList = queryFilter
-    ? list.filter(movie => movie.title.toLowerCase().includes(queryFilter.toLowerCase()))
+    ? list.filter((movie) => movie.title.toLowerCase().includes(queryFilter.toLowerCase()))
     : list;
 
   return (
@@ -22,7 +22,7 @@ export const MovieList = ({ list }: { list: IMovie[] }) => {
 
       {filteredList.length > 0 ? (
         <ul>
-          {filteredList.map(movie => (
+          {filteredList.map((movie) => (
             <li key={movie.id} data-testid="movie-card">
               <Link to={`/movie/${movie.id}`}>
                 <figure>

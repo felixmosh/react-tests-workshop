@@ -20,11 +20,11 @@ export const fetchData = (): Promise<IMovie[]> =>
   )
     .then((r: any) => r.json())
     .then(({ results }: IMovieDbResponse) => {
-      return results.map(movie => ({
+      return results.map((movie) => ({
         title: movie.title,
         id: movie.id,
         overview: movie.overview,
-        year: movie.release_date.split('-')[0],
+        year: movie.release_date?.split('-').shift(),
         backdropPath: movie.backdrop_path,
         posterPath: movie.poster_path,
         voteAvg: movie.vote_average,
@@ -34,4 +34,4 @@ export const fetchData = (): Promise<IMovie[]> =>
     });
 
 export const getMovieById = (list: IMovie[]) => (movieId: number) =>
-  list.find(movie => movie.id === movieId);
+  list.find((movie) => movie.id === movieId);
