@@ -2,12 +2,13 @@ const Dotenv = require('dotenv-webpack');
 const path = require('path');
 
 const config = {
+  mode: 'development',
   entry: ['./src/app.tsx'],
 
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js',
-    publicPath: '/'
+    publicPath: '/',
   },
 
   resolve: {
@@ -57,7 +58,7 @@ const config = {
 
   devServer: {
     port: 3000,
-    historyApiFallback: true
+    historyApiFallback: true,
   },
 };
 
