@@ -1,3 +1,4 @@
+import React from 'react';
 import { IMovie } from '../../src/api';
 import { aMovieList } from '../builders/movie.builder';
 import { MovieListDriver } from '../drivers/MovieList.driver';

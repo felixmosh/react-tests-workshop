@@ -30,7 +30,7 @@ export class MovieDetailsDriver {
           <dataContext.Provider
             value={{
               list: this.movieList,
-              getMovieById: movieId => this.movieList.find(movie => movie.id === movieId),
+              getMovieById: (movieId) => this.movieList.find((movie) => movie.id === movieId),
             }}
           >
             <Route path="/movie/:id">
